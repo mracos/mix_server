@@ -23,7 +23,7 @@ defmodule Mix.Tasks.Server do
   @default_host 'localhost'
   @shell Mix.shell()
 
-  def run(argv) do
+  def run(argv, sleep_time \\ :infinity) do
     {opts, _} = OptionParser.parse_head!(
       argv,
       switches: [
@@ -47,6 +47,6 @@ defmodule Mix.Tasks.Server do
       directory_index: ['index.html']
     ])
 
-    Process.sleep(:infinity)
+    Process.sleep(sleep_time)
   end
 end
