@@ -24,13 +24,14 @@ defmodule Mix.Tasks.Server do
   @shell Mix.shell()
 
   def run(argv, sleep_time \\ :infinity) do
-    {opts, _} = OptionParser.parse_head!(
-      argv,
-      switches: [
-        port: [:integer, :keep],
-        host: :string,
-      ]
-    )
+    {opts, _} =
+      OptionParser.parse_head!(
+        argv,
+        switches: [
+          port: [:integer, :keep],
+          host: :string
+        ]
+      )
 
     host = if opts[:host], do: String.to_charlist(opts[:host]), else: @default_host
     port = opts[:port] || @default_port
@@ -38,14 +39,16 @@ defmodule Mix.Tasks.Server do
     @shell.info("Running basic http server on #{host}:#{port}")
 
     :inets.start()
-    :inets.start(:httpd, [
+
+    :inets.start(
+      :httpd,
       server_name: 'localhost',
       port: port,
       bind_address: host,
       document_root: '.',
       server_root: '.',
       directory_index: ['index.html']
-    ])
+    )
 
     Process.sleep(sleep_time)
   end
