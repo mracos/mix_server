@@ -1,21 +1,27 @@
-# MixServer
+<h1 align="center">mix_server</h1>
+<blockquote align="center">A simple mix task to start a (simple) http server on the current dir</blockquote>
 
-**TODO: Add description**
+![Travis (.org)](https://img.shields.io/travis/mracos/mix_server.svg?style=flat-square)
 
-## Installation
+The simplicity of `python -m http.server` with the power of Elixir/Erlang.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `mix_server` to your list of dependencies in `mix.exs`:
+## Install
 
-```elixir
-def deps do
-  [
-    {:mix_server, "~> 0.1.0"}
-  ]
-end
-```
+You can install with
+- `mix archive.install github mracos/mix_server`
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/mix_server](https://hexdocs.pm/mix_server).
+## Usage
 
+You can start the server on the current directory with:
+- `mix server`
+
+By default, it starts a server on `localhost` at the `4000` port
+
+With the root being the current dir (`$PWD`)
+
+You can also pass the  optinoal parameters of `host` and `port`
+- `mix server --port 1234 --host 0.0.0.0`
+
+That's it, really, nothing more.
+
+:duck:
