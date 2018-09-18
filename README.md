@@ -17,7 +17,7 @@ You can start the server on the current directory with:
 
 By default, it starts a server on `localhost` at the `4000` port
 
-With the root being the current dir (`$PWD`)
+With the `document_root` being the current dir (`$PWD`)
 
 You can also pass the  optinoal parameters of `host` and `port`
 - `mix server --port 1234 --host 0.0.0.0`
