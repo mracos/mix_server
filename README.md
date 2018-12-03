@@ -8,7 +8,10 @@ The simplicity of `python -m http.server` with the power of Elixir/Erlang.
 ## Install
 
 You can install with
-- `mix archive.install github mracos/mix_server`
+- `mix archive.install hex mix_server`
+
+Or if you want the latest `master`
+- `mix archive.install github mracos/mix_server master`
 
 ## Usage
 
