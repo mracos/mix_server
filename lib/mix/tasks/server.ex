@@ -36,7 +36,7 @@ defmodule Mix.Tasks.Server do
     host = if opts[:host], do: String.to_charlist(opts[:host]), else: @default_host
     port = opts[:port] || @default_port
 
-    @shell.info("Running basic http server on #{host}:#{port}")
+    @shell.info("Running basic http server on http://#{host}:#{port}")
 
     :inets.start()
 
